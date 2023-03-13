@@ -1,17 +1,16 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <OutputPath>BinMangesh\</OutputPath>
     <AssemblyName>BinMangesh</AssemblyName>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
  <ItemGroup>
-    <Compile Include="Program.cs"/>
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <Target Name="Build">
-   <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')"/>
-   <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe"/>
+   <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+   <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe" />
   </Target>
 
 </Project>
